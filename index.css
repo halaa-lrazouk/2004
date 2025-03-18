@@ -1,0 +1,387 @@
+ /* إعدادات عامة */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #ffe4e1; /* خلفية زهرية */
+    color: #333;
+    scroll-behavior: smooth; /* انتقال سلس */
+  }
+  
+  /* الشريط العلوي */
+  .top-bar {
+    background: linear-gradient(to right, #ff69b4, #ff85c1, #ffe4e1); /* تدرج لوني متحرك */
+    color: white;
+    padding: 15px 20px; /* تقليل الحشوات للجوال */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* ظل ناعم */
+    border-bottom: 2px solid rgba(255, 105, 180, 0.5);
+    animation: gradientAnimation 6s infinite alternate; /* حركة التدرج */
+  }
+  
+  /* حركة التدرج */
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* السماح بتفاف العناصر على الجوال */
+    justify-content: center; /* محاذاة العناصر في المنتصف */
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem; /* تقليل حجم النص قليلاً للجوال */
+    padding: 8px 12px; /* تقليل الحشوات */
+    border-radius: 25px; /* زوايا ناعمة */
+    background: rgba(255, 255, 255, 0.1); /* خلفية شفافة */
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  nav a:hover {
+    background: linear-gradient(45deg, #ff85c1, #ffe4e1);
+    color: #ff69b4;
+    transform: scale(1.1) translateY(-5px); /* رفع وتكبير عند التمرير */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* تعميق الظل */
+  }
+  
+  nav a:active {
+    transform: scale(0.9); /* تقليص بسيط عند الضغط */
+    background: #ffe4e1;
+    color: #ff69b4;
+  }
+  
+  .top-bar h1 {
+    margin: 0;
+    font-size: 1.5rem; /* تقليل حجم النص للجوال */
+    text-align: center;
+  }
+  
+  /* الصورة الرئيسية */
+  .hero {
+    margin-top: 70px; /* مراعاة الشريط العلوي */
+    position: relative;
+    height: 70vh; /* تقليل الارتفاع للجوال */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero video {
+    width: 95%; /* تمدد العرض لتناسب شاشة الجوال */
+    max-height: 70vh; /* تقليل أقصى ارتفاع */
+    object-fit: cover; /* الحفاظ على تناسب الفيديو */
+    border-radius: 12px; /* زوايا ناعمة */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* ظل خفيف */
+    border: 3px solid #ff85c1; /* إطار وردي */
+  }
+  
+  /* استجابة الجوال */
+  @media (max-width: 768px) {
+    .top-bar {
+      flex-direction: column; /* ترتيب عمودي للعناصر */
+      align-items: center;
+      padding: 10px 15px; /* تقليل الحشوات */
+    }
+  
+    nav {
+      gap: 5px; /* تقليل الفجوات بين الروابط */
+    }
+  
+    nav a {
+      font-size: 0.9rem; /* تصغير الخطوط */
+      padding: 6px 10px; /* تقليل الحشوات داخل الروابط */
+    }
+  
+    .hero {
+      height: 60vh; /* تقليل الارتفاع على الشاشات الصغيرة */
+    }
+  
+    .hero video {
+      width: 100%; /* استخدام العرض الكامل للشاشة */
+      max-height: 60vh;
+    }
+  }
+  
+.hero video {
+width: 80%; /* ضبط العرض ليكون مناسبًا */
+max-height: 80vh; /* تقييد أقصى ارتفاع بالنسبة للشاشة */
+object-fit: cover; /* الحفاظ على ملاءمة المحتوى داخل الإطار */
+border-radius: 12px; /* زوايا ناعمة */
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* ظل خفيف */
+border: 3px solid #ff85c1; /* إطار وردي أنيق */
+transition: box-shadow 0.0s ease, transform 0.0s ease; /* تأثيرات سلسة */
+}
+
+.hero video:hover {
+transform: scale(1.02); /* تكبير بسيط عند التمرير */
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* تعميق الظل */
+}
+
+
+.hero h2 {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+ /* قسم المينيو */
+.menu-section {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .menu-section h2 {
+    color: #ff69b4;
+    font-size: 2.8rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .menu-row {
+    display: flex;
+    flex-wrap: nowrap; /* منع التفاف العناصر */
+    gap: 30px; /* مسافة بين الأقسام */
+    justify-content: center; /* محاذاة العناصر أفقيًا في الوسط */
+    overflow-x: auto; /* شريط تمرير أفقي إذا كان العرض كبيرًا */
+    background: linear-gradient(to right, #ffe4e1, #ff85c1); /* تدرج لوني ناعم */
+    padding: 20px; /* مساحة إضافية لتبرز الأقسام */
+    border-radius: 15px; /* زوايا ناعمة */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل */
+  }
+  
+  .menu-item {
+    flex: 0 0 auto; /* الحفاظ على حجم العنصر في السطر الواحد */
+    width: 250px; /* تقليل العرض لدعم الجوال */
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-align: center;
+  }
+  
+  .menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid #ff69b4;
+  }
+  
+  .menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .menu-content {
+    padding: 15px;
+  }
+  
+  .menu-content h3 {
+    font-size: 1.5rem;
+    color: #ff69b4;
+    margin-bottom: 10px;
+  }
+  
+  .menu-content p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .menu-content a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff69b4;
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .menu-content a:hover {
+    background: #ff85c1;
+  }
+  
+  /* تأثيرات النصوص */
+  .menu-item h3 {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .menu-item h3::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff69b4;
+    animation: underline 1s ease infinite alternate;
+  }
+  
+  @keyframes underline {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  /* تحسين استجابة الجوال */
+  @media (max-width: 768px) {
+    .menu-row {
+      flex-wrap: wrap; /* السماح بتفاف العناصر في الجوال */
+      gap: 20px;
+      justify-content: center;
+    }
+  
+    .menu-item {
+      width: 90%; /* توسيع العنصر ليملأ العرض المتاح */
+      max-width: 300px; /* حد أقصى للعرض */
+    }
+  
+    .menu-content h3 {
+      font-size: 1.2rem; /* تصغير النصوص لملاءمة الجوال */
+    }
+  
+    .menu-content p {
+      font-size: 0.9rem;
+    }
+  
+    .menu-content a {
+      font-size: 0.9rem; /* تقليل حجم الروابط */
+      padding: 8px 15px;
+    }
+  }
+  
+
+/* تحسين قسم المعلومات */
+ /* قسم المعلومات */
+.info-section {
+    padding: 100px 20px; /* تقليل الحشوات للجوال */
+    background: linear-gradient(to bottom, #ffe4e1, #ff85c1); /* خلفية بتدرج لوني */
+    text-align: center;
+    border-radius: 15px; /* زوايا ناعمة */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* ظل خفيف */
+    margin: 40px 10px; /* مسافات محسنة من الجوانب */
+  }
+  
+  .info-section h2 {
+    font-size: 2.2rem; /* تصغير الخط قليلاً للجوال */
+    color: #ff69b4;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+  }
+  
+  .info-section a.info-link {
+    text-decoration: none;
+    color: #ff69b4;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .info-section a.info-link:hover {
+    color: #333;
+    transform: scale(1.1); /* تكبير النص عند التمرير */
+  }
+  
+  .info-section p {
+    font-size: 1rem; /* تقليل حجم النص للجوال */
+    color: #333;
+    margin: 8px 0;
+  }
+  
+  .info-section .phone-link {
+    color: #ff69b4;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .info-section .phone-link:hover {
+    color: #333;
+  }
+  
+  .social-icons {
+    display: flex;
+    flex-wrap: wrap; /* السماح بتفاف الأيقونات */
+    justify-content: center;
+    gap: 10px; /* تقليل المسافة بين الأيقونات */
+    margin-top: 15px;
+  }
+  
+  .social-icon {
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem; /* تصغير الحجم قليلاً للجوال */
+    padding: 8px 15px;
+    background: #ff69b4;
+    border-radius: 25px; /* زوايا دائرية */
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    background: #ffe4e1; /* تغيير لون الخلفية عند التمرير */
+    color: #333; /* تغيير لون النص */
+    transform: scale(1.1); /* تكبير طفيف */
+  }
+  
+  /* تحسين استجابة الجوال */
+  @media (max-width: 768px) {
+    .info-section {
+      padding: 50px 15px; /* تقليل الحشوات للجوال */
+    }
+  
+    .info-section h2 {
+      font-size: 1.8rem; /* تصغير الخط للعناوين */
+    }
+  
+    .info-section p {
+      font-size: 0.9rem; /* ضبط حجم الفقرات */
+    }
+  
+    .social-icons {
+      flex-direction: column; /* ترتيب الأيقونات عموديًا للجوال */
+      gap: 15px;
+    }
+  
+    .social-icon {
+      font-size: 1rem; /* تصغير الخط للأيقونات */
+      padding: 10px 15px;
+    }
+  }
+  
+
+/* الفوتر */
+footer {
+    background: #ff69b4;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+ 
+ 
+ 
+ 
+  
